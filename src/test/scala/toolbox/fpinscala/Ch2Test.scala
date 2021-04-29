@@ -12,8 +12,9 @@ class Ch2Test extends FunSuite {
         assert(!Ch2.isSorted(Array(4, 3, 2, 1), (x: Int, y: Int) => x < y))
     }
 
-    test("testPartial1") {
-
+    test("partialGivenFunctionLiteralShouldReturnExpected") {
+        val partiallyApplied = Ch2.partial(1, (a: Int, b: Char) => (a + b).toChar.toString)
+        assert("d" == partiallyApplied.apply('c'))
     }
 
     test("testCompose") {
